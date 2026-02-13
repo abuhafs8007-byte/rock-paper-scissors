@@ -1,126 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <!-- Required -->
-  <meta charset="UTF-8"> <!-- Character encoding -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsive design -->
-
-  <!-- SEO -->
-  <meta name="description"
-    content="Play an interactive Rock, Paper, Scissors game against the computer. First to reach the winning score wins!">
-  <meta name="keywords" content="Rock Paper Scissors, Game, Interactive, JavaScript Game, Play Online">
-  <meta name="author" content="Ahmad Dhul-Qarnein">
-
-  <!-- Social Media / Open Graph -->
-<meta property="og:title" content="Rock, Paper, Scissors Game">
-<meta property="og:description" content="Challenge the computer in this fun Rock, Paper, Scissors game! Set the winning score and play now.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://abuhafs8007-byte.github.io/rock-paper-scissors/">
-<meta property="og:image" content="https://abuhafs8007-byte.github.io/rock-paper-scissors/image/RPS.png?v=2">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Rock, Paper, Scissors Game">
-<meta name="twitter:description" content="Play Rock, Paper, Scissors online against the computer. First to reach the winning score wins!">
-<meta name="twitter:image" content="https://abuhafs8007-byte.github.io/rock-paper-scissors/image/RPS.png?v=2">
-
-  <!-- Title -->
-  <title>Rock, Paper, Scissors Game</title>
-
-  <!-- Stylesheet -->
-  <link rel="stylesheet" href="style.css">
-
-  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap"
-    rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-
-
 <body>
-  <h1>Let's play <strong>✊</strong> Rock <strong>💥</strong>, <strong>✋</strong> Paper <strong>📄</strong>,
-    <strong>✌️</strong> Scissors <strong>✂️</strong>
-  </h1>
-  <main>
-    <details class="rules-container">
-      <summary>Rules to the game</summary>
-      <p>You will be playing against the computer.</p>
-      <p>You can choose between Rock, Paper, and Scissors.</p>
-      <p>The first one to three points wins.</p>
-
-      <p>Here are the rules to getting a point in the game:</p><br <ul>
-      <li>Rock beats Scissors</li>
-      <li>Scissors beats Paper</li>
-      <li>Paper beats Rock</li>
-      </ul><br <p>
-      If the player and computer choose the same option (e.g., Paper and
-      Paper), then no one gets the point.
-      </p>
-    </details>
-
-    <div class="input-container">
-      <label for="winningRange">Set Winning Score</span></label>
-      <input id="winningRange" type="number" min="2" placeholder="Choose winning score">
-      <button id="startGameBtn" type="button">Start Game</button>
-    </div>
-
-    <section>
-      <div class="results-container">
-        <div class="player-computer-choice">
-          <div class="player-choice">
-            <h2>Your Choice: <span id="player-choice-display">None</span></h2>
-          </div>
-
-          <div class="computer-choice">
-            <h2>Computer's Choice: <span id="computer-choice-display">None</span></h2>
-          </div>
-        </div>
-        <hr>
-
-        <div class="divider">
-          <p id="winning-Score">Winning Score: <span id="winning-score-display">3</span></p>
-        </div>
-        <hr>
-
-        <div class="scoreboard">
-          <h2>Scoreboard:</h2>
-          <div class="player-computer-score">
-            <p id="player-score">Your Score: <span id="player-score-display">0</span></p>
-            <p id="computer-score">Computer's Score: <span id="computer-score-display">0</span></p>
-          </div>
-        </div>
-        <hr>
-
-        <div class="round-winner">
-          <h2 id="round-winner-h2">Round Winner: <span id="round-winner-display">No rounds played yet.</span></h2>
-        </div>
-
-        <div class="buttons-container">
-          <button id="rock" class="choice-button" type="button">Rock</button>
-          <button id="paper" class="choice-button" type="button">Paper</button>
-          <button id="scissors" class="choice-button" type="button">Scissors</button>
-        </div>
-
-      </div>
-      <div class="game-winner">
-        <h2 id="game-winner">Game Winner: <span id="game-winner-display">No winner yet.</span></h2>
-        <p id="game-winner-message"></p>
-        <p id="game-over-message">Game over! Please reset to play again.</p>
-        <button id="resetGameBtn" type="button">Reset Game</button>
-      </div>
-    </section>
-
-  </main>
-
-  <footer>
-    <p>&copy; Dev Ahmad, Izzul-Arab Abu Hafs</p>
-  </footer>
-
-  <script defer src="script.js"></script>
+    <header>
+        <h1 id="game-title">Rock Paper Scissors</h1>
+    </header>
+    <main>
+        <section id="game-area">
+            <div class="card player">
+                <h2 id="player-title">Player</h2>
+                <div id="player-choice"></div>
+            </div>
+            <div class="card computer">
+                <h2 id="computer-title">Computer</h2>
+                <div id="computer-choice"></div>
+            </div>
+        </section>
+        <section id="result-area">
+            <div class="card result">
+                <h2 id="result-title">Result</h2>
+                <p id="result-message"></p>
+                <button id="play-again">Play Again</button>
+            </div>
+        </section>
+        <section id="controls">
+            <h2>Choose Your Weapon</h2>
+            <button id="rock">Rock</button>
+            <button id="paper">Paper</button>
+            <button id="scissors">Scissors</button>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2026 Rock Paper Scissors Game</p>
+    </footer>
+    <script src="script.js"></script>
 </body>
-
 </html>
